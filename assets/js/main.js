@@ -1,4 +1,3 @@
-
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -8,7 +7,7 @@ canvas.height = window.innerHeight;
 ctx.strokeStyle = "#BADA55";
 ctx.lineJoin = "round";
 ctx.lineCap = "round";
-ctx.lineWidth = 100;
+ctx.lineWidth = 10;
 
 let isDrawing = false;
 let lastX = 0;
@@ -44,39 +43,16 @@ canvas.addEventListener("mousedown", (e) => {
 });
 
 canvas.addEventListener("mousemove", draw);
+
 canvas.addEventListener("mouseup", () => {
     isDrawing = false;
-    clearCanvas();
 });
 
 canvas.addEventListener("mouseout", () => {
     isDrawing = false;
-    clearCanvas();
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+document.getElementById("clear").addEventListener("click", () => {
+    isDrawing = false;
+    clearCanvas();
+});
